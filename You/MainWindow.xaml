@@ -1,0 +1,107 @@
+﻿<Window x:Class="You.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:You"
+        mc:Ignorable="d"
+        Title="You" Height="800" Width="1000" MinHeight="800" MinWidth="1000" Loaded="Window_Loaded" Icon="Resource/logoYOU2.png">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#fafafa" >
+                <Border BorderThickness="0 0 1 0" BorderBrush="#dcdcdc"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width='*'/>
+                        <ColumnDefinition Width='*'/>
+                        <ColumnDefinition Width='*'/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Button Command="{Binding OpenNeuralNetworkCommand}"  Height="{Binding}">
+                            <Border>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="DatabaseSearch" Height="20" Width="20" HorizontalAlignment="Left" Foreground="White"/>
+                                    <TextBlock Text="Анализ" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
+                                </StackPanel>
+                            </Border>
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Button Command="{Binding OpenVictoryCommand}"  Height="{Binding}">
+                            <Border>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Trophy" Height="20" Width="20" HorizontalAlignment="Left" Foreground="White"/>
+                                    <TextBlock Text="Достижения" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
+                                </StackPanel>
+                            </Border>
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Button Command="{Binding OpenSectionsCommand}"  Height="{Binding}">
+                            <Border>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Database" Height="20" Width="20" HorizontalAlignment="Left" Foreground="White"/>
+                                    <TextBlock Text="Разделы" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
+                                </StackPanel>
+                            </Border>
+                        </Button>
+                    </Grid>
+                    <!--<Grid Grid.Column="3">
+                        <Button Command="{Binding OpenTrainingCommand}"  Height="{Binding}">
+                            <Border>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="dumbbell" Height="20" Width="20" HorizontalAlignment="Left" Foreground="White"/>
+                                    <TextBlock Text="Тренировки" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
+                                </StackPanel>
+                            </Border>
+                        </Button>
+                    </Grid>-->
+                </Grid>
+ 
+            </Grid>
+            <Grid Grid.Row="1" x:Name="mainGrid" Background="#E8EAF6">
+                
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#0D47A1">
+                <Label x:Name="UserName" Content="Vladislav" Foreground="White" FontSize="16" VerticalAlignment="Bottom" Margin="10 0 0 20" FontFamily="Segoe Print"/>
+                <Label x:Name="UserFam" Content="Zhivyla" Foreground="White" FontSize="16" VerticalAlignment="Bottom" Margin="10 0 0 0" FontFamily="Segoe Print"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Width="45">
+                    <Button Background="{x:Null}" BorderBrush="{x:Null}" Click="PersonSettings_Click">
+                        <materialDesign:PackIcon Kind="Settings" Foreground="white" Height="22" Width="22"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1" Background="#2979FF" x:Name="GridBottomRigth">
+                <Ellipse x:Name="CircleUserPhoto" Height="80" Width="80" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 -40 10 0" Stroke="#FF4A53FF">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{Binding PathUserPhoto}" Stretch="UniformToFill"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10 50 0 0">
+                <Label Content="БАЛЛЫ:" Foreground="Yellow" FontSize="16"/>
+                <Label x:Name="ScoreCount" Content="0" Foreground="Yellow" FontSize="16"/>                    
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10 100 0 0">
+                    <Label Content="ДОСТИЖЕНИЯ:" Foreground="Yellow" FontSize="16"/>
+                    <Label x:Name="ProgressCount" Content="0" Foreground="Yellow" FontSize="16"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

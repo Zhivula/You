@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace You.ViewModel
+{
+    class CardViewModel
+    {
+        public CardViewModel()
+        {
+
+        }
+    }
+}

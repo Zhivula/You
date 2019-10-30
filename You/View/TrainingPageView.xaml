@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="You.View.TrainingPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:You.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <StackPanel>
+            <Grid>
+                <Border BorderBrush="#2962FF" BorderThickness="0 0 0 4" Background="White"/>
+                <StackPanel>
+                    <Label Content="ТЕКУЩАЯ ПРОГРАММА!" Foreground="Gray" FontSize="22" Margin="10 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <WrapPanel x:Name="TrainingWeekPanel" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                    </WrapPanel>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
